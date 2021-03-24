@@ -16,7 +16,7 @@ public class HomeController {
   
    @RequestMapping(value = "/springmvc", method = RequestMethod.GET)
    public ModelAndView springMVCPage() {
-      ModelAndView mav = new ModelAndView("springmvc");
+      ModelAndView mav = new ModelAndView("springMVC");
       return mav;
    }
 }
