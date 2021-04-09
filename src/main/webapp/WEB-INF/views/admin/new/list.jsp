@@ -25,6 +25,7 @@
 		<ol class="breadcrumb">
 			<li class="breadcrumb-item"><a href="#">Quản lý</a></li>
 			<li class="breadcrumb-item active">Danh sách bài viết</li>
+			
 		</ol>
 
 
@@ -45,7 +46,8 @@
 									<th>Tên bài viết</th>
 									<th>Thể loại</th>
 									<th>Ngày sửa</th>
-									<th>Thao tác</th>
+									<th>Thao tác | <a class="  fas fa-plus-circle" data-toggle="tooltip" title="Thêm bài viết" style = "margin: 0"
+					href='<c:url value = "/quan-tri/bai-viet/chinh-sua?id="/>'></a> | </th>
 								</tr>
 							</thead>
 							<tfoot>

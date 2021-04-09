@@ -36,12 +36,12 @@
 							<table style ="width: 100%">
 								<tr>
 									<td><form:label path="title">Tiêu đề</form:label></td>
-									<td><form:input path="title" value="${model.title}" /></td>
+									<td><form:input path="title" value="${model.title}" style = "width: 70%" /></td>
 								</tr>
 
 								<tr>
 									<td><form:label path="thumbnail">Hình đại diện</form:label></td>
-									<td><form:radiobutton path="thumbnail"
+									<td><form:input path="thumbnail" type ="file"
 											value="${model.thumbnail}" /></td>
 								</tr>
 
@@ -59,14 +59,14 @@
 
 								<tr>
 									<td><form:label path="shortDescription">Mô tả ngắn</form:label></td>
-									<td><form:textarea path="shortDescription"
+									<td><form:textarea path="shortDescription" style = "width: 70%"
 											value="${model.shortDescription}" /></td>
 								</tr>
 
 
 								<tr>
 									<td><form:label path="content">Nội dung</form:label></td>
-									<td><form:textarea path="content" value="${model.content}" /></td>
+									<td><form:textarea path="content" id ='CKcontent' style = "width: 70%" /></td>
 								</tr>
 							</table>
 
@@ -103,6 +103,14 @@
 		</div>
 	</div>
 	<script>
+	
+	var editor='';
+	$(document).ready(function(){
+		editor=CKEDITOR.replace( 'CKcontent' );
+	});
+	
+	
+	
 	$('#btnAddOrUpdateNew').click(function (e) {
 	    e.preventDefault();
 	    var data = {};
@@ -110,6 +118,7 @@
 	    $.each(formData, function (i, v) {
             data[""+v.name+""] = v.value;
         });
+	    data["content"] = editor.getData();
 	    var id = $('#newId').val();
 	    if (id == "") {
 	    	addNew(data);

@@ -30,4 +30,5 @@
 
     
     <mvc:resources mapping="/template/**" location="/template/" />
+    <mvc:resources mapping="/ckeditor/**" location="/ckeditor/" />
 </beans> 
